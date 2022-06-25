@@ -136,15 +136,13 @@ class App extends React.Component {
                 key={Math.random()}
                 className="col-4 mt-1"
               >
-                <a href="/">
-                  <img
-                    style={{ height: "100%" }}
-                    src={require(`./images/${card.link}`)}
-                    alt=""
-                    className="img-fluid"
-                    onClick={() => this.onCardState(index, card)}
-                  />
-                </a>
+                <img
+                  style={{ height: "100%", cursor: "pointer" }}
+                  src={require(`./images/${card.link}`)}
+                  alt=""
+                  className="img-fluid"
+                  onClick={() => this.onCardState(index, card)}
+                />
               </div>
             );
           })}
