@@ -133,7 +133,7 @@ class App extends React.Component {
               <div key={Math.random()} className="col-4">
                 <img
                   src={require(`./images/${card.link}`)}
-                  // src={require(`./images/back.png`)}
+                  alt=''
                   className="img-fluid"
                   onClick={() => this.onCardState(index, card)}
                 />
