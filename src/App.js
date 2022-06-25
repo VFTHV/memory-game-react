@@ -17,6 +17,7 @@ class App extends React.Component {
       { value: 14, suit: "diamonds", link: "back.png" },
     ],
     chosen: [],
+    mistakes: 0,
   };
 
   onDeckShuffle = () => {
@@ -63,6 +64,7 @@ class App extends React.Component {
           let secondCardToRemove = { ...newDeck[chosen[1].index] };
           secondCardToRemove.link = "blank.png";
           newDeck[chosen[1].index] = secondCardToRemove;
+          this.setState({ chosen: [], deck: newDeck });
         } else {
           //  Flipping unmatched cards face down
           let firstCardToChangeBack = { ...newDeck[chosen[0].index] };
@@ -72,8 +74,13 @@ class App extends React.Component {
           let secondCardToChangeBack = { ...newDeck[chosen[1].index] };
           secondCardToChangeBack.link = "back.png";
           newDeck[chosen[1].index] = secondCardToChangeBack;
+
+          this.setState({
+            chosen: [],
+            deck: newDeck,
+            mistakes: this.state.mistakes + 1,
+          });
         }
-        this.setState({ chosen: [], deck: newDeck });
       }
     }, 3500);
   }
@@ -92,12 +99,12 @@ class App extends React.Component {
         chosen[0].value === chosen[1].value &&
         chosen[0].suit === chosen[1].suit
       ) {
-        return "Your cards are matching";
+        return "Chosen cards are matching";
       } else {
-        return "Your cards are not matching";
+        return "Chosen cards are not matching";
       }
     } else {
-      return "Choose 2 cards";
+      return "Try matching 2 cards";
     }
   };
 
@@ -121,6 +128,16 @@ class App extends React.Component {
     }
   };
 
+  onMistakeCount = () => {
+    const mistakes = this.state.mistakes;
+
+    if (!mistakes) {
+      return "You have made no mistakes";
+    } else {
+      return `Mistakes: ${this.state.mistakes}`;
+    }
+  };
+
   render() {
     return (
       <div className="container-fluid">
@@ -129,6 +146,9 @@ class App extends React.Component {
         </div>
         <div className="row">
           <h2>{this.onCardCompare()}</h2>
+        </div>
+        <div className="row">
+          <h3>{this.onMistakeCount()}</h3>
         </div>
         <div className="row">
           {this.state.deck.map((card, index) => {
