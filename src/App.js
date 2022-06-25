@@ -48,7 +48,6 @@ class App extends React.Component {
       if (this.state.chosen.length === 2) {
         if ((chosen[0].value === chosen[1].value) && (chosen[0].suit === chosen[1].suit)) {
           const newDeck = [...this.state.deck];
-          // console.log(newDeck[chosen[0]], newDeck[chosen[1]])
           let firstCardToRemove = {...newDeck[chosen[0].index]}
           firstCardToRemove.link = 'blank.png';
           newDeck[chosen[0].index] = firstCardToRemove;
@@ -93,7 +92,6 @@ class App extends React.Component {
       }
       else if 
       ((chosen[0].value === chosen[1].value) && (chosen[0].suit === chosen[1].suit)) {
-        console.log(this.state.chosen)
         return 'Your cards are matching';
       } 
       else {
@@ -128,7 +126,6 @@ class App extends React.Component {
         <div className="row text-center">
           <h1>Memory Game</h1>
         </div>
-        {console.log(this.state.deck)}
         <div className="row">
           
           {this.state.deck.map((card, index) => {
