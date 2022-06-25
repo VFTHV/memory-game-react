@@ -3,6 +3,12 @@ import React from "react";
 class App extends React.Component {
   state = {
     deck: [
+      {value: 13, suit: 'clubs', link: 'back.png'},
+      {value: 13, suit: 'clubs', link: 'back.png'},
+      {value: 13, suit: 'hearts',  link: 'back.png'},
+      {value: 13, suit: 'hearts',  link: 'back.png'},
+      {value: 13, suit: 'diamonds',  link: 'back.png'},
+      {value: 13, suit: 'diamonds',  link: 'back.png'},
       {value: 14, suit: 'clubs', link: 'back.png'},
       {value: 14, suit: 'clubs', link: 'back.png'},
       {value: 14, suit: 'hearts',  link: 'back.png'},
@@ -127,11 +133,15 @@ class App extends React.Component {
           <h1>Memory Game</h1>
         </div>
         <div className="row">
+          <h2>{this.onCardCompare()}</h2>
+        </div>
+        <div className="row">
           
           {this.state.deck.map((card, index) => {
             return (
-              <div key={Math.random()} className="col-4">
+              <div style={{height: '18vh'}} key={Math.random()} className="col-4">
                 <img
+                  style={{height: '100%'}}
                   src={require(`./images/${card.link}`)}
                   alt=''
                   className="img-fluid"
@@ -140,9 +150,6 @@ class App extends React.Component {
               </div>
             );
           })}
-        </div>
-        <div className="row">
-          <h2>{this.onCardCompare()}</h2>
         </div>
       </div>
     );
