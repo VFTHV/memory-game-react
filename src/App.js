@@ -136,7 +136,7 @@ class App extends React.Component {
                 key={Math.random()}
                 className="col-4 mt-1"
               >
-                <a href="#">
+                <a>
                   <img
                     style={{ height: "100%" }}
                     src={require(`./images/${card.link}`)}
