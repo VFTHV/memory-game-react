@@ -96,6 +96,8 @@ class App extends React.Component {
       } else {
         return "Your cards are not matching";
       }
+    } else {
+      return "Choose 2 cards";
     }
   };
 
