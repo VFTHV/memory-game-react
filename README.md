@@ -1,4 +1,4 @@
-# IP address tracker solution
+# Memory Cards Game
 
 Click on this [Memory Card Game](https://memory-cards-game-react.netlify.app) see live website 
 
@@ -12,9 +12,7 @@ Click on this [Memory Card Game](https://memory-cards-game-react.netlify.app) se
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
